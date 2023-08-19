@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+
+
+<head>
+
+  <meta charset="utf-8">
+
+  <title> Business Card</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="شعار النقابة ملون مفرغ.png">
+  <link href='https://fonts.googleapis.com/css?family=El Messiri' rel='stylesheet'>
+  <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js "></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+
+<body style=" 
+    min-height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: cover;
+    opacity: 0.88;">
+
+
+  <video autoplay muted loop id="background-video">
+    <source src="-video-pattern.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+
+
+  <div id="wrapper" class="wrapper">
+
+
+    <video id="intro-video" autoplay muted>
+      <source src="video.mp4" type="video/mp4">
+    </video>
+
+
+    <header>
+
+
+
+      <div style="position: relative;
+
+              right: 30%;
+
+              top: 46%;
+
+              margin-right: -150px;
+
+              padding-left: 0;
+
+              box-sizing: border-box;
+
+              color: #ffffff;
+
+">
+
+        <img src="logo2.png" style="height: 60%; width: 60%; margin-right: 4%; ">
+
+      </div>
+
+
+
+      <br><br>
+
+
+
+      <div style="align-items: center; box-sizing: border-box;   right: 30%;">
+
+        <div class="Title">
+          <h3> مرحبًا بك كموظف/ة في النقابة العامة للسيارات!</h3>
+          <p style="padding: 10px; color: #338158;"> إنشاء بطاقة شخصية ستعزز هويتك المهنية وتسهل التعرف عليك.</p>
+          <h4 class="h4"> استغل هذه الفرصة لتعزيز تمثيلك الشخصي والمهني</h4>
+
+        </div>
+
+
+      </div>
+
+
+
+
+
+    </header>
+
+
+
+    <div style="margin-right: 70px;">
+
+      <form> 
+
+      <div class="form" style="align-items: center; ">
+
+
+
+        <label for="nameA" > الاسـم بالعربي <span class="required">*</span></label><br>
+
+        <input type="text" id="nameA" name="nameA" placeholder="   ادخل اسمك باللغة العربية " required style="margin-top: 10px;" ><br><br>
+
+
+
+        <label for="nameE"> الاسـم بالإنجليزي <span class="required">*</span></label><br>
+
+        <input type="text" id="nameE" name="nameE" placeholder="   ادخل اسمك باللغة الإنجليزية " required><br><br>
+
+
+
+        <label for="positionA">الوظيفة بالعربي <span class="required">*</span></label><br>
+
+        <input type="text" id="positionA" name="positionA" placeholder="   المسمى الوظيفي باللغة العربية "
+          required><br><br>
+
+
+
+        <label for="positionE"> الوظيفة بالإنجليزي <span class="required">*</span></label><br>
+
+        <input type="text" id="positionE" name="positionE" placeholder="   المسمى الوظيفي باللغة الإنجليزية "
+          required><br><br>
+
+
+
+
+
+        <label for="number">رقم الجوال <span class="required">*</span></label><br>
+
+        <input type="text" id="number" name="number" placeholder="   ادخل رقم الجوال " required><br><br>
+
+
+
+        <label for="Email"> الايميل <span class="required">*</span></label><br>
+
+        <input type="Email" class="Email" id="Email" name="Email" placeholder="  ادخل البريد الإلكتروني  "
+          required><br><br>
+
+        <label for="link"> لينك تري إن وجد </label><br>
+
+        <input type="text" class="link" id="link" name="link" placeholder="" required><br><br>
+
+
+        <input class="preview"  id="preview" type="submit" value=" معاينة البطاقة " onclick="previewImage(event)">
+
+        <input class="downloud" id="download" type="submit" value="تحميل البطاقة " onclick="saveAsPDFAa(event)"><br><br>
+
+      </div>
+    </form>
+
+    </div>
+
+
+
+
+    <div id="qr-code" class="qr-code" style="position: relative;">
+
+
+
+      <img id="img2" class="img2" src="بطاقة بزنس كارد نموذج 7 فارغ 2_page-0001 (6).jpg"
+        style="height: 97% ; width: 97%;">
+
+
+
+
+
+      <div class="imgs">
+        <img class="img1" src="">
+      </div>
+
+      <div class="imgs1">
+        <img class="img1" src="">
+      </div>
+
+
+
+
+      <div id="preview-text-NA" class="text"></div>
+
+      <div id="preview-text-PA" class="text2"></div>
+
+      <div id="preview-text-NO" class="text3"></div>
+
+      <div id="preview-text-EM" class="text4"></div>
+
+      <div id="preview-text-L" class="text5"></div>
+
+
+
+
+
+
+      <div id="preview-text-NEE" class="textE"></div>
+
+      <div id="preview-text-PEE" class="textE2"></div>
+
+      <div id="preview-text-NOE" class="textE3"></div>
+
+      <div id="preview-text-EME" class="textE4"></div>
+      
+      <div id="preview-text-LE" class="textE5"></div>
+
+
+
+
+
+    </div>
+
+
+  </div>
+
+
+  </div>
+  <div class="footer">
+    <h4>الاتصال الداخلي © النقابة العامة للسيارات 2023</h4>
+  </div>
+
+  <script type="text/javascript" src="script.js"></script>
+
+
+</body>
+
+</html>
